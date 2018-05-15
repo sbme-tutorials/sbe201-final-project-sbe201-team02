@@ -4,9 +4,7 @@
 #include <queue>
 #include <string>
 
-class Huffmancodes
-{
-    struct Node
+struct Node
     {
         char data;
         int freq;
@@ -77,4 +75,3 @@ void printCode(Node *root, std::string str)
         }
         printCode(minHeap.top(), "");
     }
-};
