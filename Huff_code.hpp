@@ -22,3 +22,23 @@ class Huffmancodes
         }
     };
 };
+
+void printCode(Node *root, std::string str, int &j)
+    {
+        if (root == nullptr)
+            return;
+
+        if (root->data == '$')
+        {
+            printCode(root->left, str + "0", j);
+            printCode(root->right, str + "1", j);
+        j++;
+        }
+
+        if (root->data != '$')
+        {
+            std::cout << root->data << " : " << str << std::endl;
+            printCode(root->left, str + "0", j);
+            printCode(root->right, str + "1", j);
+        }
+    }
