@@ -21,7 +21,6 @@ struct Node
 
 
 
-
 struct compare
 {
     bool operator()(Node *l, Node *r)
@@ -56,7 +55,11 @@ void printCode(Node *root, std::string str)
 
 
 
+<<<<<<< HEAD
 Node* HuffmanCodes(std::map<char, int> &frequency)
+=======
+Node *HuffmanCodes(char data[], int freq[], int size)
+>>>>>>> 78f67c15ea69e4971520aab185570aa16755f102
 {
     struct Node *left, *right, *top;
 
@@ -82,5 +85,9 @@ Node* HuffmanCodes(std::map<char, int> &frequency)
         minHeap.push(top);
     }
     printCode(minHeap.top(), "");
+<<<<<<< HEAD
     return minHeap.top();
+=======
+    return minHeaep.top();
+>>>>>>> 78f67c15ea69e4971520aab185570aa16755f102
 }

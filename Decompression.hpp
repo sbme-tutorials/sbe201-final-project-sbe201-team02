@@ -2,6 +2,10 @@
 #include <queue>
 #include <string>
 #include <map>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 78f67c15ea69e4971520aab185570aa16755f102
 
 std::string encode(std::string input, std::map<char, std::string> dictionary)
 {
