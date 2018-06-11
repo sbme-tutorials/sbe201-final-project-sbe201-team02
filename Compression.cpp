@@ -1,7 +1,11 @@
 #include"Huff_code.hpp"
+
+#include <map>
+#include <string>
 int main()
     {
 
+        
         char arr[] = {'a', 'b', 'c', 'd', 'e', 'f'};
         int freq[] = {5, 9, 12, 13, 16, 45};
 

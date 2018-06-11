@@ -30,3 +30,23 @@ std::string Decomp(std::string input, Node *tree)
     return output;
 }
 
+
+void makeDictionary(Node *root, std::string str, std::map< char , std::string > &dictionary )
+{
+    if (root == nullptr)
+        return;
+
+    else  if (root->data == '$')
+    {
+        makeDictionary(root->left, str + "0", dictionary);
+        makeDictionary(root->right, str + "1", dictionary);
+    }
+
+    else if (root->data != '$')
+    {
+        dictionary.insert ( std::pair<char,std::string>(root->data,str) );
+        makeDictionary(root->left, str + "0", dictionary);
+        makeDictionary(root->right, str + "1", dictionary);
+    }
+}
+
