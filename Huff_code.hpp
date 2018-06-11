@@ -1,8 +1,7 @@
 #include <iostream>
-#include <algorithm>
-#include <vector>
 #include <queue>
 #include <string>
+#include <map>
 
 struct Node
 {
@@ -57,14 +56,14 @@ void printCode(Node *root, std::string str)
 
 
 
-void HuffmanCodes(char data[], int freq[], int size)
+Node* HuffmanCodes(std::map<char, int> &frequency)
 {
     struct Node *left, *right, *top;
 
     std::priority_queue<Node *, std::vector<Node *>, compare> minHeap;
 
-    for (int i = 0; i < size; ++i)
-        minHeap.push(new Node(data[i], freq[i]));
+    for (auto &p : frequency)
+        minHeap.push(new Node(p.first, p.second));
 
     while (minHeap.size() != 1)
     {
@@ -83,4 +82,5 @@ void HuffmanCodes(char data[], int freq[], int size)
         minHeap.push(top);
     }
     printCode(minHeap.top(), "");
+    return minHeap.top();
 }

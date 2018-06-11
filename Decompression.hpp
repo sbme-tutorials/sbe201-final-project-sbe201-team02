@@ -1,9 +1,7 @@
 #include <iostream>
-#include <algorithm>
-#include <vector>
 #include <queue>
 #include <string>
-
+#include <map>
 
 std::string encode(std::string input, std::map<char, std::string> dictionary)
 {
