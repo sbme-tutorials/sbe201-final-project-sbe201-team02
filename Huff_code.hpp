@@ -57,7 +57,7 @@ void printCode(Node *root, std::string str)
 
 
 
-void HuffmanCodes(char data[], int freq[], int size)
+Node *HuffmanCodes(char data[], int freq[], int size)
 {
     struct Node *left, *right, *top;
 
@@ -83,4 +83,5 @@ void HuffmanCodes(char data[], int freq[], int size)
         minHeap.push(top);
     }
     printCode(minHeap.top(), "");
+    return minHeaep.top();
 }
