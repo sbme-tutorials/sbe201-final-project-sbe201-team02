@@ -1,7 +1,11 @@
 # Huffman Code :bowtie:
 ## 1. Huffman Algorithm 
 
+<<<<<<< HEAD
 ![David A. Huffman](images/davidhuffman-wm.jpg)
+=======
+
+>>>>>>> 1c74f9a8a657caf62d4fbd73e94b3259ee36b30a
 
 *  It's an algorithm developed by **David A. Huffman**  while he was a  student at MIT, and published in the **1952** paper **"A Method for the Construction of Minimum-Redundancy Codes"**
 
@@ -45,7 +49,11 @@ struct Node
 
 4. Repeat steps#2 and #3 until the heap contains only one node. The remaining node is the root node and the tree is complete.
 
+<<<<<<< HEAD
  ![](images/220px-HuffmanCodeAlg.png)
+=======
+ 
+>>>>>>> 1c74f9a8a657caf62d4fbd73e94b3259ee36b30a
 
 * **Implementation**
 ```c++
@@ -89,8 +97,12 @@ void HuffmanCodes(char data[], int freq[], int size)
 
 
 
+<<<<<<< HEAD
     ![](images/Huffman-Coding-6.png)
 
+=======
+   
+>>>>>>> 1c74f9a8a657caf62d4fbd73e94b3259ee36b30a
 * **Implementation**
 
 ```c++
@@ -153,7 +165,11 @@ std::string encode(std::string input, std::map<char, std::string> dictionary)
     3. If the bit is 1, we move to right node of the tree.
     4. If during traversal, we encounter a leaf node, we print character of that particular leaf node and then again continue the iteration of the encoded data starting from step 1.
 
+<<<<<<< HEAD
     ![](images/Huffman+Decoding+5+A+H+1111001+AC+3+2+C+E+I+1+5+8+7+5+1+1+15+10+1+25.jpg)
+=======
+    
+>>>>>>> 1c74f9a8a657caf62d4fbd73e94b3259ee36b30a
 
 * **Implementation**
 ```c++
