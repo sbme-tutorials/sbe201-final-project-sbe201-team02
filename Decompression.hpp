@@ -4,6 +4,22 @@
 #include <queue>
 #include <string>
 
+
+std::string encode(std::string input, std::map<char, std::string> dictionary)
+{
+    int index=0;
+    std::string compressedText;
+    while ( index < input.size())
+    {
+        std::string newCode = dictionary.find(input[index])-> second;
+        index++;
+        compressedText = compressedText + newCode;
+    }
+    return compressedText;
+}
+
+
+
 std::string Decomp(std::string input, Node *tree)
 {
     int index = 0;
