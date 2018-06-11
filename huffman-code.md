@@ -1,6 +1,8 @@
-# Huff Man Code :bowtie:
-## 1. Huff Man Algorithm 
+# Huffman Code :bowtie:
+## 1. Huffman Algorithm 
+
 ![David A. Huffman](davidhuffman-wm.jpg)
+
 *  It's an algorithm developed by **David A. Huffman**  while he was a  student at MIT, and published in the **1952** paper **"A Method for the Construction of Minimum-Redundancy Codes"**
 
 
@@ -32,7 +34,7 @@ struct Node
 ```
 
 ----------------------------
-## 2. Huff Man Compression
+## 2. Huffman Compression
 
 ### **Steps to build Huffman Tree** :evergreen_tree:
 
@@ -142,7 +144,7 @@ std::string encode(std::string input, std::map<char, std::string> dictionary)
      * where n is the number of unique characters. If there are n nodes, extractMin() is called 2*(n – 1) times. extractMin() takes O(logn) time as it calles minHeapify(). So, overall complexity is O(nlogn).
 
     ------------------------
- ## 3. Huff Man Decompression
+ ## 3. Huffman Decompression
 * To decode the encoded data we require the Huffman tree. 
 * We iterate through the binary encoded data. To find character corresponding to current bits, we use following simple steps.
 
