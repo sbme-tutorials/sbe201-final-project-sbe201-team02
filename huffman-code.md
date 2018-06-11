@@ -41,3 +41,80 @@ struct Node
 3. Create a new internal node with frequency equal to the sum of the two nodes frequencies. Make the first extracted node as its left child and the other extracted node as its right child. Add this node to the min heap.
 
 4. Repeat steps#2 and #3 until the heap contains only one node. The remaining node is the root node and the tree is complete.
+* **Implementation**
+```c++
+void HuffmanCodes(char data[], int freq[], int size)
+    {
+        struct Node *left, *right, *top;
+
+        std::priority_queue<Node *, std::vector<Node *>, compare> minHeap;
+
+        for (int i = 0; i < size; ++i)
+            minHeap.push(new Node(data[i], freq[i]));
+
+        while (minHeap.size() != 1)
+        {
+
+            left = minHeap.top();
+            minHeap.pop();
+
+            right = minHeap.top();
+            minHeap.pop();
+
+            top = new Node('$', left->freq + right->freq);
+
+            top->left = left;
+            top->right = right;
+
+            minHeap.push(top);
+        }
+        printCode(minHeap.top(), "");
+    }
+```
+
+
+### **Steps to print codes from Huffman Tree:** :keycap_ten:
+
+* Traverse the tree formed starting from the root. 
+* Maintain an auxiliary array. While moving to the left child, write 0 to the array. While moving to the right child, write 1 to the array. 
+* Print the array when a leaf node is encountered.
+
+    
+
+
+
+    ![](Huffman-Coding-6.png)
+
+* **Implementation**
+
+```c++
+ struct compare
+    {
+        bool operator()(Node *l, Node *r)
+        {
+            return (l->freq > r->freq);
+        }
+    };
+```
+
+
+```c++
+void makeDictionary(Node *root, std::string str, std::map< char , std::string > &dictionary )
+{
+    if (root == nullptr)
+        return;
+
+    else  if (root->data == '$')
+    {
+        makeDictionary(root->left, str + "0", dictionary);
+        makeDictionary(root->right, str + "1", dictionary);
+    }
+
+    else if (root->data != '$')
+    {
+        dictionary.insert ( std::pair<char,std::string>(root->data,str) );
+        makeDictionary(root->left, str + "0", dictionary);
+        makeDictionary(root->right, str + "1", dictionary);
+    }
+}
+```
