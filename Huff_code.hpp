@@ -20,28 +20,6 @@ struct Node
 
 
 
- char Decomp( std::string input )
-    {
-        char* stringPtr;
-        Node* NodePtr;
-        for( char b : input )
-        {
-            if (stringPtr == "1")
-            {
-                NodePtr = NodePtr->right;
-            }
-            else if (stringPtr == "0")
-            {
-                NodePtr = NodePtr->left;
-            }
-        }
-        
-        while (NodePtr->left != NULL && NodePtr->right != NULL)
-        {
-            
-        }
-        return NodePtr->data;
-    }
 
 
 
